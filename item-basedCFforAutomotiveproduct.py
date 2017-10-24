@@ -219,7 +219,7 @@ def itemBasedRecommendations(ratings, itemToMatch, usernum):
 	#print(dic)
 	for j in range(0,len(wantedPredictions)):
 		recommend = []
-		uRatings = ratings[wantedPredictions[j]]
+		uRatings = ratings[wantedPredictions[j][0]]
 		scores = {}
 		total = {}
 		ranks = {}
@@ -245,7 +245,7 @@ def itemBasedRecommendations(ratings, itemToMatch, usernum):
 		f = []
 		b = []		
 		print(len(recommend))
-		file.write(str(wantedPredictions[j])+',')
+		file.write(wantedPredictions[j][0]+',')
 		file.write(str(dic[recommend[0]]))
 		for k in range (1,5):
 			print(dic[recommend[k]])
